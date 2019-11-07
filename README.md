@@ -8,12 +8,14 @@
 ### Association
 - has_many :groupe_users
 - has_many :comments
-- has_many: groups through: :groups_users
+- has_many :groups through: :groups_users
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |gruop|references|null: false|
+|username|references|null: true|
+
 ### Association
 - has_many :users through: :groups_users
 - has_many :group_users
