@@ -13,9 +13,9 @@
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|use|references|null: false
+|gruop|references|null: false|
 ### Association
-- has_many :users
+- has_many :users through: :groups_users
 - has_many :group_users
 - has_many :comments
 
@@ -31,10 +31,10 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text|null: true|
 |user_id|integer|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
-|photo|integer|null: false, foreign_key: true|
+|photo|photo|null: true, foreign_key: true|
 ### Association
 - belongs_to :users
 - belongs_to :group
