@@ -2,18 +2,28 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
+|email|null: false|index: true|
+|password|null: false|index: true|
+|username|null: false|index: true|
 ### Association
 - has_many :groupe_users
 - has_many :comments
+- has_many: groups through: :groups_users
 
-## groupe_usersテーブル
+## groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|use|references|null: false
+### Association
+- has_many :users
+- has_many :group_users
+- has_many :comments
+
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -24,15 +34,9 @@
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|photo|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
-- belongs_to :groupe_users
-
-## photosテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :comment
 - belongs_to :group
+
+
