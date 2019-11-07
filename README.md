@@ -31,10 +31,10 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: true|
+|text|text|
 |user_id|integer|null: false, foreign_key: true|
-|group|string|null: false, foreign_key: true|
-|photo|photo|null: true|
+|group_id|string|null: false, foreign_key: true|
+|image|image|null: true|
 ### Association
 - belongs_to :users
 - belongs_to :group
