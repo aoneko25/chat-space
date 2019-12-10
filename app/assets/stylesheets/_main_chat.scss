@@ -2,7 +2,6 @@
   width: calc(100% - 300px);
   float: left;
   box-sizing: border-box;
-
 }
 .main-header {
   height: 100px;
@@ -26,8 +25,9 @@
 }
   &__member-list__member  {
     box-sizing: border-box;
-  }
 }
+}
+
 .main-header__edit-btn {
   height: 40px;
   line-height: 40px;
@@ -38,8 +38,8 @@
   position: absolute;
   right: 40px;
   box-sizing: border-box;
-
 }
+
 .messages {
   height: calc(100vh - 190px);
   background-color: #fafafa;
@@ -85,7 +85,7 @@
   width: 100%;
   display: block;
 }
-.form-input-box__text {
+.input-box__text {
   height: 50px;
   width: 100%;
   padding: 0 40px 0 10px;
@@ -104,9 +104,9 @@
   box-sizing: border-box;
   position: absolute
 }
-.input-box__image__file{
-    display: none;
-}
+.input-box__image__file {
+  display: none;
+  }
 
 .submit-btn {
   width: 100px;
