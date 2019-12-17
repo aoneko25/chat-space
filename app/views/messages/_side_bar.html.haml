@@ -2,7 +2,7 @@
   .side-header
     .side-header__box
       .side-header__box-user-name
-        koneko
+        = current_user.name
       %ul.side-header__box__menu
         %ul.side-header__box__menu-group
         %li.list
@@ -10,7 +10,7 @@
             = fa_icon 'pencil-square-o', class: 'icon'
         .side-header__box__menu__edit-user
         %li.list
-          = link_to do
+          = link_to edit_user_path(current_user) do
             = fa_icon 'cog', class: 'icon'
   .groups
     %a{:href => "/groups/9669/messages"}
