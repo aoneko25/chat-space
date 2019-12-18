@@ -11,15 +11,15 @@
 .side-header {
   background-color: #253141;
   height: 100px;
-  display: flex;
   align-items: center;
   padding: 0 20px;
   list-style: none;
+  display: flex;
   &__box {
-    display: flex;
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
+    display: flex;
   }
   &__box-user-name {
     float: left;
@@ -36,11 +36,13 @@
       margin-left: 0.3rem;
     }
   &__menu-group {
+    display: flex;
     .icon {
       color: white;
       }
       }
     }
+
       
 .groups {
   height: calc(100vh - 100px);
