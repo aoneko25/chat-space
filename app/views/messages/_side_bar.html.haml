@@ -13,16 +13,12 @@
           = link_to edit_user_path(current_user) do
             = fa_icon 'cog', class: 'icon'
   .groups
-    %a{:href => "/groups/9669/messages"}
-      .group
-        %p.groups__group-name  cats
-        %p.groups__latest-message Hello!
-    %a{:href => "/groups/9669/messages"}
-      .group
-        %p.groups__group-name  mix cats
-        %p.groups__latest-message  Good evening!
-    %a{:href => "/groups/9669/messages"}
-      .group
-        %p.groups__group-name  kitty
-        %p.groups__latest-message  まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group 
+        = link_to group_messages_path(group) do
+          %p.groups__group-name  
+            = group.name
+          %p.groups__latest-message 
+            メッセージはまだありません。
+      
 
