@@ -25,6 +25,10 @@ class GroupsController < ApplicationController
     end
   end
 
+  def move_to_index
+    redirect_to action: :index 
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [] )
