@@ -21,9 +21,6 @@ $(function(){
         `</div>` +
       `</div>`
       //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=` + message.id + `>` +
@@ -56,6 +53,9 @@ $(function(){
           `<img src="` + message.image + `" class="lower-message__image" >` +
         `</div>` +
       `</div>`
+      if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+        setInterval(reloadMessages, 7000);
+      }
     };
     return html;
   };
@@ -82,11 +82,12 @@ $(function(){
     })
     .always(function(){
       $('input').prop('disabled', false);
-
-
+    });
+  });
       var reloadMessages = function() {
         //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-
+        last_message_id = $('.message:last').data("message-id");
+        console.log(last_message_id)
         $.ajax({
           //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
           url: "api/messages",
@@ -116,5 +117,4 @@ $(function(){
         });
       };
     });
-    });
-  });
+  
