@@ -254,7 +254,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   font-awesome-rails
-  font-awesome-sass
+  font-awesome-sass (~> 5.11.1)
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.5)
   jquery-rails
